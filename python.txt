@@ -1,0 +1,65 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+class FlightTicket:
+    def __init__(self,name,origin,destiny,board,tc,price):
+        self.name=name
+        self.origin=origin
+        self.destiny=destiny
+        self.board=board
+        self.tc=tc
+        self.price=price
+        
+class AirlineManagement:
+    def __init__(self,aname,alist):
+        self.aname=aname
+        self.alist=alist
+        
+        
+    def find_seatno():
+        
+        
+        return name,sno
+    
+    def countflight(self,tc):
+        occur = self.alist.count(tc)
+        return occur
+            
+        
+    
+        
+no=int(input())
+bd1=[]
+tc1=[]
+name1=[]
+sno=[]
+for i in range(no):
+    name=input()
+    origin=input()
+    destiny=input()
+    bd=input()
+    x = bd.split(",")
+    t=x[0]
+    t1=t.split("/")
+    nm=t1[1]
+    name1.append(nm)
+    sno.append(x[3])
+    tc=input()
+    tc1.append(tc)
+    price=float(input())
+
+#print(tc1)
+tc1=[s.replace('_Class', '') for s in tc1]
+#print(tc1)
+
+bclass=input()
+ftobj=FlightTicket(name,origin,destiny,bd1,tc,price)
+am=AirlineManagement(ftobj,tc1)
+count=am.countflight(bclass)
+if(len(sno)==0):
+    print("No appropriate details found")
+else:
+    for i in range(0,len(name1)):
+        print(name1[i].strip(),sno[i])
+if(count==None):
+    print("Count :", 0)
+else:
+    print("Count :", count)
